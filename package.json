@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "faker": "^6.6.6"
+    "@faker-js/faker": "^6.0.0-alpha.7",
+    "faker": "^6.6.6",
+    "nodemon": "^2.0.15"
   }
 }
