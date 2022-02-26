@@ -33,17 +33,27 @@ connection.connect((err) => {
 // 	},
 // );
 
-const q = "SELECT * FROM users";
-connection.query(q, (err, rows) => {
-	if (err) {
-		throw err;
-	}
+// const q = "INSERT INTO users SET ? ";
+// const person = { email: faker.internet.email() };
+// connection.query(q, person, (err, rows) => {
+// 	if (err) {
+// 		throw err;
+// 	}
+// 	console.log(rows);
+// });
 
-	for (let i = 0; i < rows.length; i++) {
-		console.log(rows[i].email);
-	}
-});
+connection.query(
+	"SELECT * FROM users ORDER BY created_at LIMIT 1",
+	(err, rows) => {
+		if (err) {
+			throw err;
+		}
 
+		for (let i = 0; i < rows.length; i++) {
+			console.log(rows[i].email);
+		}
+	},
+);
 connection.end();
 
 app.listen(PORT, () => {
