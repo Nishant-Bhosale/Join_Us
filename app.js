@@ -33,11 +33,15 @@ connection.connect((err) => {
 // 	},
 // );
 
-connection.query("SELECT CURDATE()", (err, rows) => {
+const q = "SELECT * FROM users";
+connection.query(q, (err, rows) => {
 	if (err) {
 		throw err;
 	}
-	console.log(rows[0]["CURDATE()"]);
+
+	for (let i = 0; i < rows.length; i++) {
+		console.log(rows[i].email);
+	}
 });
 
 connection.end();
