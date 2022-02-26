@@ -20,6 +20,18 @@ connection.connect((err) => {
 		console.log("connected");
 	}
 });
+
+connection.query(
+	"CREATE TABLE random(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255))",
+	(err, rows) => {
+		if (err) {
+			throw err;
+		} else {
+			console.log("data got back");
+			console.log(rows);
+		}
+	},
+);
 app.listen(PORT, () => {
 	console.log(PORT + " is running");
 });
