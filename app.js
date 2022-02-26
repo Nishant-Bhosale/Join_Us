@@ -21,18 +21,27 @@ connection.connect((err) => {
 	}
 });
 
-connection.query(
-	"CREATE TABLE random(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255))",
-	(err, rows) => {
-		if (err) {
-			throw err;
-		} else {
-			console.log("data got back");
-			console.log(rows);
-		}
-	},
-);
+// connection.query(
+// 	"CREATE TABLE random(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255))",
+// 	(err, rows) => {
+// 		if (err) {
+// 			throw err;
+// 		} else {
+// 			console.log("data got back");
+// 			console.log(rows);
+// 		}
+// 	},
+// );
+
+connection.query("SELECT CURDATE()", (err, rows) => {
+	if (err) {
+		throw err;
+	}
+	console.log(rows[0]["CURDATE()"]);
+});
+
+connection.end();
+
 app.listen(PORT, () => {
 	console.log(PORT + " is running");
 });
-console.log(faker.internet.email());
