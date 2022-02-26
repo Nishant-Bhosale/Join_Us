@@ -1,4 +1,4 @@
 const { faker } = require("@faker-js/faker");
-console.log(faker.internet.email());
+const mysql = require("mysql");
 
-console.log(faker.date.past());
+console.log(faker.internet.email());
