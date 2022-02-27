@@ -8,6 +8,7 @@ const mysql = require("mysql");
 //Sets view engine to EJS
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static(__dirname + "/public"));
 
 const connection = mysql.createConnection({
 	host: "localhost",
@@ -38,12 +39,15 @@ app.get("/", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-	const q = "INSERT INTO user(email) VALUES ? ";
+	const person = { email: req.body.email };
+	const q = "INSERT INTO users SET ? ";
 
-	connection.query(q, (err, rows) => {
+	connection.query(q, person, (err, rows) => {
 		if (err) {
 			console.log(err);
 		}
+		console.log(rows);
+		res.redirect("/");
 	});
 });
 // connection.query(

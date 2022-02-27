@@ -1,0 +1,65 @@
+body {
+	text-align: center;
+	text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+	font-family: "Roboto", sans-serif;
+	color: rgb(66, 69, 86);
+	height: 100%;
+	/* background-image: url("http://i.imgur.com/BJP2Q1j.jpg"); */
+	background: lightblue;
+	background-size: cover;
+	font-weight: 100;
+}
+
+.flex-container {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+}
+h1 {
+	margin: 0;
+	font-size: 250px;
+	line-height: 400px;
+}
+
+p {
+	margin: 0;
+	font-size: 40px;
+	font-weight: 100;
+}
+
+.form {
+	line-height: 1.5;
+	border: none;
+	border-bottom: 3px solid #ebebeb;
+	margin-top: 100px;
+	width: 700px;
+	font-size: 2.9rem;
+	color: white;
+	padding: 5px 10px;
+	background: transparent;
+}
+
+button {
+	line-height: 2;
+	border: none;
+	border: 3px solid white;
+	font-size: 1.9rem;
+	color: rgb(66, 69, 86);
+	padding: 5px 30px;
+	background: rgba(255, 255, 255, 1);
+	border-radius: 5px;
+	opacity: 0.8;
+}
+
+::-webkit-input-placeholder {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+input[type="text"]:focus {
+	outline: none;
+}
+
+button:hover {
+	opacity: 1;
+}

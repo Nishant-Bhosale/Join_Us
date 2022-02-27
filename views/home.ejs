@@ -1,10 +1,22 @@
-<h1>JOIN US</h1>
-<p class="lead">
-	Enter your email to join <strong><%=count%></strong> others on our waitlist.
-	We are 100% not a cult.
-</p>
+<link rel="stylesheet" href="./app.css" />
 
-<form action="/register" method="POST">
-	<input type="text" class="form" name="email" placeholder="Enter your Email" />
-	<button>JOIN NOW</button>
-</form>
+<body>
+	<div class="flex-container">
+		<div class="container">
+			<h1>JOIN US</h1>
+			<p class="lead">
+				Enter your email to join <strong><%=count%></strong> others on our
+				waitlist. We are 100% not a cult.
+			</p>
+			<form action="/register" method="POST">
+				<input
+					type="text"
+					class="form"
+					name="email"
+					placeholder="Enter your Email"
+				/>
+				<button>JOIN NOW</button>
+			</form>
+		</div>
+	</div>
+</body>
