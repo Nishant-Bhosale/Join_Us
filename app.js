@@ -21,6 +21,19 @@ connection.connect((err) => {
 	}
 });
 
+app.get("/", (req, res) => {
+	const q = "SELECT COUNT(*) AS cnt FROM users";
+
+	connection.query(q, (err, rows) => {
+		if (err) {
+			console.log(err);
+		}
+		console.log(rows);
+		res.json({ count: rows[0].cnt });
+	});
+	// res.json({ result });
+});
+
 // connection.query(
 // 	"CREATE TABLE random(id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255))",
 // 	(err, rows) => {
@@ -47,16 +60,15 @@ connection.connect((err) => {
 // 	console.log(rows);
 // });
 
-connection.query("SELECT * FROM users", (err, rows) => {
-	if (err) {
-		throw err;
-	}
+// connection.query("SELECT * FROM users", (err, rows) => {
+// 	if (err) {
+// 		throw err;
+// 	}
 
-	for (let i = 0; i < rows.length; i++) {
-		console.log(rows[i].email);
-	}
-});
-connection.end();
+// 	for (let i = 0; i < rows.length; i++) {
+// 		console.log(rows[i].email);
+// 	}
+// });
 
 app.listen(PORT, () => {
 	console.log(PORT + " is running");
