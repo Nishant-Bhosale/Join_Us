@@ -5,6 +5,9 @@ const PORT = 5000;
 const app = express();
 const mysql = require("mysql");
 
+//Sets view engine to EJS
+app.set("view engine", "ejs");
+
 const connection = mysql.createConnection({
 	host: "localhost",
 	password: "password",
@@ -29,7 +32,8 @@ app.get("/", (req, res) => {
 			console.log(err);
 		}
 		console.log(rows);
-		res.json({ count: rows[0].cnt });
+		// res.json({ count: rows[0].cnt });
+		res.render("home.ejs");
 	});
 	// res.json({ result });
 });
